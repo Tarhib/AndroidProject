@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     EditText number1,number2;
     Button add,sub,mult,div,mod,clear;
     float result_num;
-    int num1,num2;
+    float num1,num2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,59 +30,102 @@ public class MainActivity extends AppCompatActivity {
         div=(Button)findViewById(R.id.div);
         clear=(Button)findViewById(R.id.clear);
         mod=(Button)findViewById(R.id.mod);
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                num1=Integer.parseInt(number1.getText().toString());
-                num2=Integer.parseInt(number2.getText().toString());
+                //num1=Integer.parseInt(number1.getText().toString());
+              //  num2=Integer.parseInt(number2.getText().toString());
+                if(number1.getText().toString().isEmpty()||number2.getText().toString().isEmpty())
+                {
+                    result.setText("Invalid Operation");
+                }
+                else
+                {
+                    num1=Float.parseFloat(number1.getText().toString());
+                    num2=Float.parseFloat(number2.getText().toString());
 
-                result_num=num1+num2;
-                result.setText(String.valueOf(result_num));
+                    result_num=num1+num2;
+                    result.setText(String.valueOf(result_num));
+                }
+
             }
         });
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(number1.getText().toString().isEmpty()||number2.getText().toString().isEmpty())
+                {
+                    result.setText("Invalid Operation");
+                }
+                else
+                {
+                    num1=Float.parseFloat(number1.getText().toString());
+                    num2=Float.parseFloat(number2.getText().toString());
 
-                num1=Integer.parseInt(number1.getText().toString());
-                num2=Integer.parseInt(number2.getText().toString());
+                    result_num=num1-num2;
+                    result.setText(String.valueOf(result_num));
+                }
 
-                result_num=num1-num2;
-                result.setText(String.valueOf(result_num));
+
             }
         });
         mult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(number1.getText().toString().isEmpty()||number2.getText().toString().isEmpty())
+                {
+                    result.setText("Invalid Operation");
+                }
+                else
+                {
+                    num1=Float.parseFloat(number1.getText().toString());
+                    num2=Float.parseFloat(number2.getText().toString());
 
-                num1=Integer.parseInt(number1.getText().toString());
-                num2=Integer.parseInt(number2.getText().toString());
+                    result_num=num1*num2;
+                    result.setText(String.valueOf(result_num));
+                }
 
-                result_num=num1*num2;
-                result.setText(String.valueOf(result_num));
+
             }
         });
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(number1.getText().toString().isEmpty()||number2.getText().toString().isEmpty())
+                {
+                    result.setText("Invalid Operation");
+                }
+                else
+                {
+                    num1=Float.parseFloat(number1.getText().toString());
+                    num2=Float.parseFloat(number2.getText().toString());
 
-                num1=Integer.parseInt(number1.getText().toString());
-                num2=Integer.parseInt(number2.getText().toString());
+                    result_num=num1/num2;
+                    result.setText(String.valueOf(result_num));
+                }
 
-                result_num=num1/num2;
-                result.setText(String.valueOf(result_num));
+
             }
         });
         mod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(number1.getText().toString().isEmpty()||number2.getText().toString().isEmpty())
+                {
+                    result.setText("Invalid Operation");
+                }
+                else
+                {
+                    num1=Float.parseFloat(number1.getText().toString());
+                    num2=Float.parseFloat(number2.getText().toString());
 
-                num1=Integer.parseInt(number1.getText().toString());
-                num2=Integer.parseInt(number2.getText().toString());
+                    result_num=num1%num2;
+                    result.setText(String.valueOf(result_num));
+                }
 
-                result_num=num1%num2;
-                result.setText(String.valueOf(result_num));
+
             }
         });
         clear.setOnClickListener(new View.OnClickListener() {
